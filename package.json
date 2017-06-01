@@ -1,0 +1,13 @@
+{
+  "name": "angular-select",
+  "version": "1.0.0",
+  "description": "Select directive for angular 1.x",
+  "main": "index.js",
+  "repository": "https://github.com/StefanoVollono/angular-select.git",
+  "author": "Stefano Vollono <stefanovollono@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "jquery": "^3.2.1"
+  }
+}
