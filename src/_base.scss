@@ -1,7 +1,13 @@
+// default settings
+$select-height: 45px!default;
+
+
+// Component
 .customSelect {
   cursor: pointer;
   width: 100%;
-  height: 100%;
+  height: $select-height;
+  position: relative;
 
   &--disabled {
     cursor: not-allowed;
@@ -10,32 +16,21 @@
 
   &__selected {
     height: 100%;
+    padding: 0 12px;
     color: rgba(#37474f, .36);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: white;
 
     p {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 20px);
+      width: calc(100% - 32px);
+      margin: 0;
 
-    }
-
-    span {
-      position: absolute;
-      left: auto;
-      top: 0;
-      background: #0080ff;
-      color: white;
-      bottom: 0;
-      width: 32px;
-      right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     &--choosed {
@@ -43,8 +38,28 @@
     }
   }
 
+  &__arrow {
+    position: absolute;
+    left: auto;
+    top: 0;
+    background: #0080ff;
+    bottom: 0;
+    width: 32px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: #ffffff;
+    }
+  }
+
   &__options {
     display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -57,7 +72,10 @@
 
     &-items {
       margin: 0;
-      padding: 12px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      min-height: $select-height;
       border-top: 1px solid #f2f2f2;
       transition: background .2s ease-in;
 
