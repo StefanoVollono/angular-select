@@ -8,14 +8,21 @@
     demoSelectCtrl.$inject = ['$scope'];
     function demoSelectCtrl ($scope) {
 
+        $scope.formData = {};
+
         $scope.countries = {
             title: 'Nazione',
             items : [
-                {label: 'Italia', value: 'IT'},
+                {label: 'France', value: 'FR'},
                 {label: 'Inghilterra', value: 'UK'},
                 {label: 'Germania', value: 'DE'}
             ]
         };
+
+        $scope.countriesCallback = function (index) {
+            $scope.callbackResult = index;
+        }
+
 
     };
 })();

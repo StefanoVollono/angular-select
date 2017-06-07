@@ -1,5 +1,14 @@
 // default settings
-$select-height: 45px!default;
+$select-height:   45px!default;
+$header-color:    #37474f!default;
+$arrow-bg:        #0080ff!default;
+$arrow-fill:      #ffffff!default;
+$arrow-width:     32px!default;
+$header-bg:       #ffffff!default;
+$options-bg:      #fafafa!default;
+$options-color:   #37474f!default;
+$options-shadow:  0 5px 10px -4px rgba(0, 0, 0, .36)!default;
+
 
 
 // Component
@@ -8,51 +17,55 @@ $select-height: 45px!default;
   width: 100%;
   height: $select-height;
   position: relative;
+  box-sizing: border-box;
 
+  // Disabled
   &--disabled {
     cursor: not-allowed;
     opacity: .3;
   }
 
-  &__selected {
+  &__header {
     height: 100%;
     padding: 0 12px;
-    color: rgba(#37474f, .36);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
+    background: $header-bg;
 
-    p {
+    &-title {
+      color: $header-color;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 32px);
+      width: calc(100% - #{$arrow-width});
       margin: 0;
 
+      &--choosed {
+        font-weight: 700;
+      }
+
     }
 
-    &--choosed {
-      color: rgba(#37474f, .94);
-    }
-  }
+    &-arrow {
+      position: absolute;
+      left: auto;
+      top: 2px;
+      bottom: 2px;
+      right: 2px;
+      background: $arrow-bg;
+      width: $arrow-width;
 
-  &__arrow {
-    position: absolute;
-    left: auto;
-    top: 0;
-    background: #0080ff;
-    bottom: 0;
-    width: 32px;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    svg {
-      fill: #ffffff;
+      svg {
+        fill: $arrow-fill;
+      }
     }
+
   }
 
   &__options {
@@ -64,8 +77,8 @@ $select-height: 45px!default;
     top: 100%;
     left: 0;
     z-index: 999;
-    background-color: white;
-    box-shadow: 0 5px 10px -4px rgba(0, 0, 0, .36);
+    background-color: $options-bg;
+    box-shadow: $options-shadow;
     max-height: 301px;
     min-width: 100%;
     overflow: auto;
@@ -76,11 +89,11 @@ $select-height: 45px!default;
       align-items: center;
       padding: 0 12px;
       min-height: $select-height;
-      border-top: 1px solid #f2f2f2;
+      border-top: 1px solid darken($options-bg, 5%);
       transition: background .2s ease-in;
 
       &:hover {
-        background-color: #f7f7f7;
+        background-color: lighten($options-bg, 5%);
       }
     }
   }

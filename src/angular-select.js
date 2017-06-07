@@ -15,16 +15,20 @@
         .module('angular-select', [])
         .directive('selectOption', selectOption);
 
-    selectOption.$inject = ['$timeout', '$filter'];
+    selectOption.$inject = ['$timeout'];
 
-    function selectOption($timeout, $filter) {
+    function selectOption($timeout) {
 
         return {
             template:   '<div class="customSelect" ng-class="{\'customSelect--disabled\': !selectoptionElements.items.length}">' +
-                            '<div class="customSelect__selected" ng-class="{\'customSelect__selected--choosed\': selectoptionModel}">' +
-                                '<p ng-if="!selectoptionElements.items.length">Nessun elemento</p>' +
-                                '<p ng-if="selectoptionElements.items.length">{{selectoptionElements.title}}</p>' +
-                                '<span class="customSelect__arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="18px" height="18px"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg></span>' +
+                            '<div class="customSelect__header">' +
+                                '<p class="customSelect__header-title" ng-class="{\'customSelect__header-title--choosed\': selectoptionModel}">' +
+                                    '<span ng-if="selectoptionElements.items.length">{{selectoptionElements.title}}</span>' +
+                                    '<span ng-if="!selectoptionElements.items.length">Nessun elemento</span>' +
+                                '</p>' +
+                                '<span class="customSelect__header-arrow">' +
+                                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="18px" height="18px"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>' +
+                                '</span>' +
                             '</div>' +
                             '<ul class="customSelect__options">' +
                                 '<li ' +
@@ -45,31 +49,50 @@
                 selectoptionRequired: "=?",
                 selectoptionOrderby: "@?"
             },
-            link: function (scope, element, attrs) {
+            controller: ['$scope', function ($scope) {
 
-                var $list = element.find(".customSelect__options");
-                var $selected = element.find(".customSelect__selected");
-                var $document = angular.element(document);
-
-                $document.click(function() {
-                    //Hide the menus if visible
-                    if($list.is(":visible")) {
-                        $list.hide();
+                $scope.selectoptionElements.items.sort(function(a,b) {
+                    if($scope.selectoptionOrderby === 'asc') {
+                        return (a.label < b.label) ? -1 : (a.label > b.label) ? 1 : 0;
+                    } else if ($scope.selectoptionOrderby === 'desc') {
+                        return (a.label < b.label) ? 1 : (a.label > b.label) ? -1 : 0;
                     }
                 });
 
-                $selected.click(function(event){
+                this.updateParent = function($index){
+                    $scope.selectoptionModel = $scope.selectoptionElements.items[$index].value;
+                    $scope.selectoptionElements.title = $scope.selectoptionElements.items[$index].label;
+
+                    $timeout(function(){
+                        $scope.selectoptionCallback({index: $index});
+                    }, 0, true);
+                };
+
+            }],
+            controllerAs: 'so',
+            link: function (scope, element, attrs) {
+
+                var $list = element.find(".customSelect__options");
+                var $selected = element.find(".customSelect__header");
+
+
+                $(document).on('click touchstart', function () {
+                    //Hide the menus if visible
+                    $(".customSelect__options").hide();
+                });
+
+                $selected.click(function(event) {
                     event.stopPropagation();
+                    var sibling = $(this).next(); // Salvo in memoria la tendina corrente
+                    $(".customSelect__options").not(sibling).hide(); // nascondo tutte le tendine tranne la corrente
 
-                    // chiudo le altre tendine eventualmente aperte
-                    $('.customSelect__options').hide();
-
-                    // apro e chiudo il corrente
-                    if($list.is(":visible")) {
-                        $list.hide();
+                    // Apro e chiudo la tendina
+                    if(sibling.is(":visible")) {
+                        sibling.hide();
                     } else {
-                        $list.show();
+                        sibling.show();
                     }
+
                 });
 
             }
