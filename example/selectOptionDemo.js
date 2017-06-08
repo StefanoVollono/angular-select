@@ -9,7 +9,6 @@
     function demoSelectCtrl ($scope) {
 
         $scope.formData = {};
-        $scope.callbackResult = null;
 
         $scope.countries = {
             title: 'Nazione',
@@ -20,10 +19,18 @@
             ]
         };
 
+        $scope.age = {
+            title: 'Età',
+            items : [
+                {label: '18', value: 18},
+                {label: '19', value: 19},
+                {label: '20', value: 20}
+            ]
+        };
+
         $scope.countriesCallback = function (index) {
             $scope.callbackResult = index;
         }
-
-
     };
+    
 })();

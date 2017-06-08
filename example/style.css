@@ -1,15 +1,15 @@
-.customSelect {
+.selectOption {
     cursor: pointer;
     width: 100%;
     height: 45px;
     position: relative;
     box-sizing: border-box;
 }
-.customSelect--disabled {
+.selectOption--disabled {
     cursor: not-allowed;
     opacity: .3;
 }
-.customSelect__header {
+.selectOption__header {
     height: 100%;
     padding: 0 12px;
     position: relative;
@@ -18,7 +18,7 @@
     justify-content: space-between;
     background: #ffffff;
 }
-.customSelect__header-title {
+.selectOption__header-title {
     color: #37474f;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -26,25 +26,25 @@
     width: calc(100% - 32px);
     margin: 0;
 }
-.customSelect__header-title--choosed {
+.selectOption__header-title--choosed {
     font-weight: 700;
 }
-.customSelect__header-arrow {
+.selectOption__header-arrow {
     position: absolute;
     left: auto;
-    top: 0;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
     background: #0080ff;
     width: 32px;
-    bottom: 0;
-    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.customSelect__header-arrow svg {
+.selectOption__header-arrow svg {
     fill: #ffffff;
 }
-.customSelect__options {
+.selectOption__options {
     display: none;
     margin: 0;
     padding: 0;
@@ -59,7 +59,7 @@
     min-width: 100%;
     overflow: auto;
 }
-.customSelect__options-items {
+.selectOption__options-items {
     margin: 0;
     display: flex;
     align-items: center;
@@ -68,6 +68,6 @@
     border-top: 1px solid #ededed;
     transition: background .2s ease-in;
 }
-.customSelect__options-items:hover {
+.selectOption__options-items:hover {
     background-color: white;
 }

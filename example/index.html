@@ -39,12 +39,25 @@
                     selectoption-model="formData.countries"
                     selectoption-orderby='desc'>
                 </select-option>
+                <h4>Select Age <span style="color:red" ng-if="formName.$submitted && formName.age.$error.required">Required</span></h4>
+                <select-option
+                  selectoption-elements="age"
+                  selectoption-name="age"
+                  selectoption-required="true"
+                  selectoption-model="formData.age">
+                </select-option>
                 <hr />
                 <button type="submit" class="btn btn-primary">Send</button>
             </div>
             <div class="col-sm-6">
-                <h4>Result</h4>
-                <pre>selectoption-callback: <span ng-if="callbackResult != null">index: {{callbackResult}}</span><br />selectoption-model: {{formData | json}}<br />selectoption-orderby: true<br />selectoption-required: true</pre>
+                <h4>Countries select Result</h4>
+                <pre>selectoption-callback: <span ng-if="callbackResult != null">index: {{callbackResult}}</span><br />selectoption-orderby: descendent<br />selectoption-required: true</pre>
+
+                <h4>Age select Result</h4>
+                <pre>selectoption-required: true</pre>
+
+                <h4>Model Result</h4>
+                <pre>selectoption-model: {{formData | json}}</pre>
             </div>
         </div>
     </div>
