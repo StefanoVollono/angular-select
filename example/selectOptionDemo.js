@@ -9,6 +9,7 @@
     function demoSelectCtrl ($scope) {
 
         $scope.formData = {};
+        $scope.callbackResult = null;
 
         $scope.countries = {
             title: 'Nazione',
