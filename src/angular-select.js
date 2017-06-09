@@ -41,10 +41,10 @@
             replace: true,
             restrict: 'E',
             scope: {
-                selectoptionName: "@?",
+                selectoptionName: "@",
                 selectoptionModel: "=",
                 selectoptionElements: "=",
-                selectoptionCallback: "&",
+                selectoptionCallback: "&?",
                 selectoptionRequired: "=?",
                 selectoptionOrderby: "@?"
             },
