@@ -41,12 +41,12 @@
             replace: true,
             restrict: 'E',
             scope: {
-                selectoptionName: "@",
-                selectoptionModel: "=",
-                selectoptionElements: "=",
-                selectoptionCallback: "&?",
-                selectoptionRequired: "=?",
-                selectoptionOrderby: "@?"
+                selectoptionName:       "@",
+                selectoptionModel:      "=",
+                selectoptionElements:   "=",
+                selectoptionCallback:   "&?",
+                selectoptionRequired:   "=?",
+                selectoptionOrderby:    "@?"
             },
             controller: ['$scope', function ($scope) {
 
@@ -69,9 +69,11 @@
                     $scope.selectoptionModel = $scope.selectoptionElements.items[$index].value;
                     $scope.selectoptionElements.title = $scope.selectoptionElements.items[$index].label;
 
-                    $timeout(function(){
-                        $scope.selectoptionCallback({index: $index});
-                    }, 0, true);
+                    if ($scope.selectoptionCallback) {
+                        $timeout(function(){
+                            $scope.selectoptionCallback({index: $index});
+                        }, 0, true);
+                    }
                 };
 
             }],
