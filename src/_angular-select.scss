@@ -1,4 +1,5 @@
 // default settings
+$max-width:       none;
 $select-height:   45px!default;
 $header-color:    #37474f!default;
 $arrow-bg:        #0080ff!default;
@@ -13,6 +14,7 @@ $options-shadow:  0 5px 10px -4px rgba(0, 0, 0, .36)!default;
 
 // Component
 .selectOption {
+  max-width: $max-width;
   cursor: pointer;
   width: 100%;
   height: $select-height;
@@ -27,7 +29,7 @@ $options-shadow:  0 5px 10px -4px rgba(0, 0, 0, .36)!default;
 
   &__header {
     height: 100%;
-    padding: 0 12px;
+    padding: 0 0 0 12px;
     position: relative;
     display: flex;
     align-items: center;

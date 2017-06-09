@@ -51,14 +51,6 @@
             },
             controller: ['$scope', function ($scope) {
 
-                $scope.selectoptionElements.items.sort(function(a,b) {
-                    if($scope.selectoptionOrderby === 'asc') {
-                        return (a.label < b.label) ? -1 : (a.label > b.label) ? 1 : 0;
-                    } else if ($scope.selectoptionOrderby === 'desc') {
-                        return (a.label < b.label) ? 1 : (a.label > b.label) ? -1 : 0;
-                    }
-                });
-
                 this.updateParent = function($index){
                     $scope.selectoptionModel = $scope.selectoptionElements.items[$index].value;
                     $scope.selectoptionElements.title = $scope.selectoptionElements.items[$index].label;
@@ -75,25 +67,42 @@
                 var $list = element.find(".selectOption__options");
                 var $selected = element.find(".selectOption__header");
 
-
                 $(document).on('click touchstart', function () {
-                    //Hide the menus if visible
                     $list.hide();
                 });
 
                 $selected.click(function(event) {
                     event.stopPropagation();
-                    var sibling = $(this).next(); // Salvo in memoria la tendina corrente
-                    $list.not(sibling).hide(); // nascondo tutte le tendine tranne la corrente
+                    var sibling = $(this).next();
+                    $list.not(sibling).hide();
 
-                    // Apro e chiudo la tendina
                     if(sibling.is(":visible")) {
                         sibling.hide();
                     } else {
                         sibling.show();
                     }
-
                 });
+
+
+
+                /* This watch needs to evaluate async data
+                if(scope.selectoptionOrderby === 'asc' || scope.selectoptionOrderby === 'desc'){
+                    var unwatch = scope.$watch('selectoptionElements.items', function(newVal, oldVal){
+                        if(newVal.length){
+                            scope.selectoptionElements.items.sort(function(a, b){
+                                var textA = (a.label + '').toUpperCase();
+                                var textB = (b.label + '').toUpperCase();
+                                if(scope.selectoptionOrderby === 'asc')
+                                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                                else
+                                    return (textA < textB) ? 1 : (textA > textB) ? -1 : 0;
+                            });
+                            unwatch();
+                        }
+                    }, true);
+                }
+                */
+
 
             }
         }

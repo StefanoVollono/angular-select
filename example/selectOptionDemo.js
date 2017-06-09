@@ -5,11 +5,13 @@
         .module('selectExampleApp', ['angular-select'])
         .controller('demoSelectCtrl', demoSelectCtrl);
 
-    demoSelectCtrl.$inject = ['$scope'];
-    function demoSelectCtrl ($scope) {
+    demoSelectCtrl.$inject = ['$scope', '$http'];
+    function demoSelectCtrl ($scope, $http) {
 
+        // Form Model
         $scope.formData = {};
 
+        // Countries Data
         $scope.countries = {
             title: 'Nazione',
             items : [
@@ -19,6 +21,12 @@
             ]
         };
 
+        // Countries Callback
+        $scope.countriesCallback = function (index) {
+            $scope.callbackResult = index;
+        };
+
+        // Age data
         $scope.age = {
             title: 'Età',
             items : [
@@ -43,9 +51,39 @@
             ]
         };
 
-        $scope.countriesCallback = function (index) {
-            $scope.callbackResult = index;
-        }
+
+
+        // Get beer list from service
+        var getBeers = function () {
+            return $http({
+                method: 'GET',
+                url: 'https://api.punkapi.com/v2/beers'
+            }).then(function (response) {
+
+                var beerArray = response.data;
+                var newBeerArray = [];
+
+                beerArray.forEach( function (arrayItem) {
+                    newBeerArray.push({
+                        label: arrayItem.name,
+                        value: arrayItem.name
+                    })
+                });
+
+                // return processed items
+                return newBeerArray;
+            });
+        };
+
+        // evaluate promise inside controller
+        getBeers().then(function (response) {
+            // API Rest beer
+            $scope.beers = {
+                title: 'Birre',
+                items : response
+            };
+        });
+
     };
 
 })();

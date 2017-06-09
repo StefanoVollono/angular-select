@@ -1,4 +1,5 @@
 .selectOption {
+    max-width: none;
     cursor: pointer;
     width: 100%;
     height: 45px;
@@ -11,7 +12,7 @@
 }
 .selectOption__header {
     height: 100%;
-    padding: 0 12px;
+    padding: 0 0 0 12px;
     position: relative;
     display: flex;
     align-items: center;
