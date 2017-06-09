@@ -1,4 +1,5 @@
 (function(){
+  /*
   describe('angular-select test', function(){
 
     var $compile, $rootScope, $timeout, $scope, _container, _template, container, template;
@@ -63,7 +64,7 @@
         expect($scope.model).toEqual('UK');
     })
 
-/*
+
     it('should set the model even with async data', function(){
       var container = angular.element(_container);
       var template = angular.element(_template);
@@ -93,8 +94,9 @@
         ]
       });
     }
-*/
+
 
   })
+   */
 
 }())
