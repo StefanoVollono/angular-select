@@ -35,7 +35,7 @@
                                     'class="selectOption__options-items"' +
                                     'ng-click="so.updateParent($index)"' +
                                     'data-val="{{selectoptionElement.value}}"' +
-                                    'ng-repeat="selectoptionElement in selectoptionElements.items"><span>{{selectoptionElement.label}}</span></li>' +
+                                    'ng-repeat="selectoptionElement in selectoptionElements.items | orderBy:\'-label\' "><span>{{selectoptionElement.label}}</span></li>' +
                             '</ul>' +
                             '<input style="display:none" type="text" name="{{selectoptionName}}" ng-model="selectoptionModel" ng-required="selectoptionRequired" />' +
                         '</div>',
@@ -50,6 +50,9 @@
                 selectoptionOrderby: "@?"
             },
             controller: ['$scope', function ($scope) {
+
+                //$scope.predicate = 'label';
+                //$scope.reverse = true;
 
                 this.updateParent = function($index){
                     $scope.selectoptionModel = $scope.selectoptionElements.items[$index].value;
