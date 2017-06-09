@@ -45,7 +45,7 @@
       $compile(template)($scope);
 
       $rootScope.$digest();
-      
+
       var firstOption = container.find('ul.selectOption__options').first().find('li').first();
       firstOption.click(); //clicco il primo elemento della tendina
     })
@@ -69,12 +69,13 @@
       var template = angular.element(_template);
       container.append(template);
       $scope.countries.items = [];
-      $compile(template)($scope);
+      $scope.$digest();
+      var compiled = $compile(template)($scope);
 
       asyncCountries().then(function(resp){
-        $scope.countries.items = resp;
-        //$rootScope.$digest();
-        var ul = template.find('ul').first();
+        [].push.apply($scope.countries.items, resp);
+
+        var ul = compiled.find('ul').first();
         console.log('length: '+ ul.children('li').length)
         expect(ul.children('li').length).toBeGreaterThan(0);
       })
