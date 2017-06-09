@@ -15,6 +15,7 @@
         h1 {font-weight: 800;text-transform: uppercase}
         h1 span {font-weight: 300}
         h3 {font-weight: 300}
+        h4{margin-top: 40px}
         .col-xs-12, .col-xs-6 {margin: 10px 0}
     </style>
 </head>
@@ -37,8 +38,7 @@
                         selectoption-name="countries"
                         selectoption-required="true"
                         selectoption-callback="countriesCallback(index)"
-                        selectoption-model="formData.countries"
-                        selectoption-orderby='desc'>
+                        selectoption-model="formData.countries">
                     </select-option>
 
                     <h4>Select Age <span style="color:red" ng-if="formName.$submitted && formName.age.$error.required">Required</span></h4>
@@ -46,7 +46,8 @@
                       selectoption-elements="age"
                       selectoption-name="age"
                       selectoption-required="true"
-                      selectoption-model="formData.age">
+                      selectoption-model="formData.age"
+                      selectoption-orderby="desc">
                     </select-option>
 
                     <h4>Beer Async API Rest <span style="color:red" ng-if="formName.$submitted && formName.beers.$error.required">Required</span></h4>
@@ -54,7 +55,8 @@
                       selectoption-elements="beers"
                       selectoption-name="beers"
                       selectoption-required="true"
-                      selectoption-model="formData.beers">
+                      selectoption-model="formData.beers"
+                      selectoption-orderby="asc">
                     </select-option>
 
                     <hr />
@@ -62,15 +64,17 @@
                     <button type="submit" class="btn btn-primary">Send</button>
                 </div>
                 <div class="col-sm-6">
-                    <h4>Countries select Result</h4>
-                    <pre>selectoption-callback: <span ng-if="callbackResult != null">index: {{callbackResult}}</span><br />selectoption-orderby: descendent<br />selectoption-required: true</pre>
+                    <h4>Countries Result</h4>
+                    <pre>selectoption-callback: <span ng-if="callbackResult != null">index: {{callbackResult}}</span><br />selectoption-required: true</pre>
 
-                    <h4>Age select Result</h4>
-                    <pre>selectoption-required: true</pre>
+                    <h4>Age Result</h4>
+                    <pre>selectoption-required: true<br />selectoption-orderby: descendent<br />selectoption-required: true</pre>
+
+                    <h4>Beer Result :: <a href="https://punkapi.com/documentation/v2">API Rest</a></h4>
+                    <pre>selectoption-required: true<br />selectoption-orderby: ascendant<br />selectoption-required: true</pre>
 
                     <h4>Model Result</h4>
                     <pre>selectoption-model: {{formData | json}}</pre>
-                    {{beers}}
                 </div>
             </div>
         </div>

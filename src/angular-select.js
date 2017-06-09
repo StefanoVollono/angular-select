@@ -8,7 +8,6 @@
      * @author Karim Abdelcadir - Stefano Vollono
      * @version 1.0.0
      * @license MIT
-     * @example
      */
 
     angular
@@ -35,7 +34,7 @@
                                     'class="selectOption__options-items"' +
                                     'ng-click="so.updateParent($index)"' +
                                     'data-val="{{selectoptionElement.value}}"' +
-                                    'ng-repeat="selectoptionElement in selectoptionElements.items | orderBy:\'-label\' "><span>{{selectoptionElement.label}}</span></li>' +
+                                    'ng-repeat="selectoptionElement in selectoptionElements.items"><span>{{selectoptionElement.label}}</span></li>' +
                             '</ul>' +
                             '<input style="display:none" type="text" name="{{selectoptionName}}" ng-model="selectoptionModel" ng-required="selectoptionRequired" />' +
                         '</div>',
@@ -51,8 +50,20 @@
             },
             controller: ['$scope', function ($scope) {
 
-                //$scope.predicate = 'label';
-                //$scope.reverse = true;
+                if($scope.selectoptionOrderby === 'asc' || $scope.selectoptionOrderby === 'desc') {
+                    $scope.$watch('selectoptionElements.items', function (newVal) {
+                        if (newVal) {
+                            $scope.selectoptionElements.items.sort(function (a, b) {
+                                var textA = (a.label + '').toUpperCase();
+                                var textB = (b.label + '').toUpperCase();
+                                if ($scope.selectoptionOrderby === 'asc')
+                                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                                else
+                                    return (textA < textB) ? 1 : (textA > textB) ? -1 : 0;
+                            });
+                        }
+                    }, true);
+                }
 
                 this.updateParent = function($index){
                     $scope.selectoptionModel = $scope.selectoptionElements.items[$index].value;
@@ -85,27 +96,6 @@
                         sibling.show();
                     }
                 });
-
-
-
-                /* This watch needs to evaluate async data
-                if(scope.selectoptionOrderby === 'asc' || scope.selectoptionOrderby === 'desc'){
-                    var unwatch = scope.$watch('selectoptionElements.items', function(newVal, oldVal){
-                        if(newVal.length){
-                            scope.selectoptionElements.items.sort(function(a, b){
-                                var textA = (a.label + '').toUpperCase();
-                                var textB = (b.label + '').toUpperCase();
-                                if(scope.selectoptionOrderby === 'asc')
-                                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-                                else
-                                    return (textA < textB) ? 1 : (textA > textB) ? -1 : 0;
-                            });
-                            unwatch();
-                        }
-                    }, true);
-                }
-                */
-
 
             }
         }
