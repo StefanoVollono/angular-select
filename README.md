@@ -2,9 +2,9 @@
 Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. 
 
 ## Installation with bower or yarn
-`yarn install angular-skitter --save`
+`yarn install angular-select-option --save`
 
-`bower install angular-skitter --save`
+`bower install angular-select-option --save`
 
 ## Import scripts in your html and the module as a dependency:
 Le uniche due dipendenze della libreria sono angular e jQuery.
