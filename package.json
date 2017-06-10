@@ -1,6 +1,6 @@
 {
   "name": "angular-select",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Select directive for angular 1.x",
   "main": "index.js",
   "repository": "https://github.com/StefanoVollono/angular-select.git",
@@ -11,16 +11,16 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.4",
     "chai": "^4.0.2",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-useref": "^3.1.0",
     "jasmine-core": "^2.6.3",
     "karma": "^1.7.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.1.1",
     "karma-jasmine": "^1.1.0",
-    "angular-mocks": "^1.6.4",
-    "gulp": "^3.9.1",
-    "del": "^2.2.1",
-    "gulp-useref": "^3.1.0",
     "run-sequence": "^1.2.2"
   }
 }
