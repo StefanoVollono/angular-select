@@ -1,0 +1,28 @@
+{
+  "name": "angular-select-option",
+  "version": "1.0.2",
+  "description": "Select directive for angular 1.x",
+  "main": "angular-select.js",
+  "authors": [
+    "Karim Abdelcadir <kinotto88@yahoo.it>",
+    "Stefano Vollono <info@laboratoriocss.it>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular select",
+    "angular select option",
+    "select"
+  ],
+  "homepage": "https://github.com/StefanoVollono/angular-select",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "jquery": "^3.2.1"
+  }
+}

@@ -4,7 +4,7 @@
   "description": "Select directive for angular 1.x",
   "main": "index.js",
   "repository": "https://github.com/StefanoVollono/angular-select.git",
-  "author": "Stefano Vollono <stefanovollono@gmail.com>",
+  "author": "Stefano Vollono <info@laboratoriocss.it>",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.6.4",
