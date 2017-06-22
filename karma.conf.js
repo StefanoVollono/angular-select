@@ -22,6 +22,14 @@ module.exports = function(config) {
       'spec/spec.js'
     ],
 
+    plugins : [
+    'karma-junit-reporter',
+    'karma-chrome-launcher',
+    'karma-firefox-launcher',
+    'karma-opera-launcher',
+    'karma-ie-launcher',
+    'karma-jasmine'
+    ],
 
     // list of files to exclude
     exclude: [
