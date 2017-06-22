@@ -6,6 +6,9 @@
   "repository": "https://github.com/StefanoVollono/angular-select.git",
   "author": "Stefano Vollono <info@laboratoriocss.it>",
   "license": "MIT",
+  "scripts": {
+    "test": "karma start"
+  },
   "dependencies": {
     "angular": "^1.6.4",
     "jquery": "^3.2.1"

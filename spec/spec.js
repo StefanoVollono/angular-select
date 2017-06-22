@@ -1,5 +1,5 @@
 (function(){
-  /*
+
   describe('angular-select test', function(){
 
     var $compile, $rootScope, $timeout, $scope, _container, _template, container, template;
@@ -65,7 +65,7 @@
     })
 
 
-    it('should set the model even with async data', function(){
+    /*it('should set the model even with async data', function(){
       var container = angular.element(_container);
       var template = angular.element(_template);
       container.append(template);
@@ -93,10 +93,10 @@
            {label: 'Scotland', value: 'SC'}
         ]
       });
-    }
+    }*/
 
 
   })
-   */
+
 
 }())
