@@ -44,7 +44,7 @@ these are the custom attributes available
 
 ```javascript
 scope: {
-  selectoptionName: "@", //name display above the select
+  selectoptionName: "@", //name to display above the select
   selectoptionModel: "=", //model to bind the selected value
   selectoptionElements: "=", //list of the options
   selectoptionCallback: "&?", //callback to be triggered on click
