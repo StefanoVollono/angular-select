@@ -1,5 +1,7 @@
+[![Build Status](https://travis-ci.org/StefanoVollono/angular-select.svg?branch=master)](https://travis-ci.org/StefanoVollono/angular-select)
+
 # angular-select
-Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go.
+Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. [Demo](https://stefanovollono.github.io/angular-select/github-page/)
 
 ## Installation with bower or yarn
 `yarn install angular-select-option --save`
@@ -20,7 +22,7 @@ angular.module('myApp', ['angular-select']);
 ```
 
  ## The CSS
-You can choose between the sass or che css version.
+You can choose between the scss or che css version.
 Choosing SASS allow you to specify some graphic behaviour overriding the global variables in
 angular-select.scss file
 
@@ -91,6 +93,4 @@ $scope.countriesCallback = function (index) {
 };
 ```
 
-## Demo
 
-https://stefanovollono.github.io/angular-select/github-page/
