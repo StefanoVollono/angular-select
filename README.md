@@ -1,5 +1,5 @@
 # angular-select
-Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. 
+Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go.
 
 ## Installation with bower or yarn
 `yarn install angular-select-option --save`
@@ -7,20 +7,23 @@ Angular Select is a responsive and customizable select for angular 1.x. A simple
 `bower install angular-select-option --save`
 
 ## Import scripts in your html and the module as a dependency:
-Le uniche due dipendenze della libreria sono angular e jQuery.
+the project depends on Angular and jQuery
 
 ```html
 <script src="<your-path>/jquery/dist/jquery.js"></script>
 <script src="<your-path>/angular/angular.js"></script>
 <script src="<your-path>/angular-select/src/angular-select.js"></script>
  ```
- 
+
  ```javascript
 angular.module('myApp', ['angular-select']);
 ```
- 
+
  ## The CSS
- Puoi usare sia la versione SASS che plain css. Nelcaso decidessi di usare SASS, puoi modificare alcuni comportamenti grafici, overraidando le variabili di configurazione nella parte superiore di _angular-select.scss:
+You can choose between the sass or che css version.
+Choosing SASS allow you to choose some graphic behaviour overriding the global variables in
+angular-select.scss
+
 
 ```css
 // default settings
@@ -37,7 +40,8 @@ $options-shadow:  0 5px 10px -4px rgba(0, 0, 0, .36)!default;
 ```
 
 ## Custom Atribute
-Use angular skitter is pretty straight forward. Basta includere la direttiva come element all'interno dell'html e utilizzare i custom attribute che ti abbiamo messo a disposizione per popolarla e customizzarla. Al 'selectoptionRequired' potrai passare semplicemente un true oppure una regex. 
+Use angular skitter is pretty straight forward. Use the directive inside your html specifiyng the available
+custom attributes.
 
 ```javascript
 scope: {
@@ -51,7 +55,7 @@ scope: {
 ```
 
 ## Usage
-Ecco di seguito un esempio su come usarla. Potrai comunque trovare un esempio funzionante nella cartella /example.
+A simple example available in /example folder
 
 ```html
 <form name="formName" novalidate>
@@ -77,8 +81,8 @@ $scope.countries = {
   title: 'Nazione',
   items : [
     {label: 'France', value: 'FR'},
-    {label: 'Inghilterra', value: 'UK'},
-    {label: 'Germania', value: 'DE'}
+    {label: 'England', value: 'UK'},
+    {label: 'Germany', value: 'DE'}
   ]
 };
 
