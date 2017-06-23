@@ -22,14 +22,14 @@ module.exports = function(config) {
       'spec/spec.js'
     ],
 
-    plugins : [
+    /*plugins : [
     'karma-junit-reporter',
     'karma-chrome-launcher',
     'karma-firefox-launcher',
     'karma-opera-launcher',
     'karma-ie-launcher',
     'karma-jasmine'
-    ],
+  ],*/
 
     // list of files to exclude
     exclude: [
@@ -72,7 +72,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
