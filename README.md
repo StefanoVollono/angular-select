@@ -21,8 +21,8 @@ angular.module('myApp', ['angular-select']);
 
  ## The CSS
 You can choose between the sass or che css version.
-Choosing SASS allow you to choose some graphic behaviour overriding the global variables in
-angular-select.scss
+Choosing SASS allow you to specify some graphic behaviour overriding the global variables in
+angular-select.scss file
 
 
 ```css
@@ -40,17 +40,16 @@ $options-shadow:  0 5px 10px -4px rgba(0, 0, 0, .36)!default;
 ```
 
 ## Custom Atribute
-Use angular skitter is pretty straight forward. Use the directive inside your html specifiyng the available
-custom attributes.
+these are the custom attributes available
 
 ```javascript
 scope: {
-  selectoptionName: "@",
-  selectoptionModel: "=",
-  selectoptionElements: "=",
-  selectoptionCallback: "&?",
-  selectoptionRequired: "=?",
-  selectoptionOrderby: "@?"
+  selectoptionName: "@", //name display above the select
+  selectoptionModel: "=", //model to bind the selected value
+  selectoptionElements: "=", //list of the options
+  selectoptionCallback: "&?", //callback to be triggered on click
+  selectoptionRequired: "=?", //if the select is required e.g. inside a form
+  selectoptionOrderby: "@?" //order to display the elements
 },
 ```
 
@@ -78,7 +77,7 @@ $scope.formData = {};
 
 // Countries Data
 $scope.countries = {
-  title: 'Nazione',
+  title: 'Nation',
   items : [
     {label: 'France', value: 'FR'},
     {label: 'England', value: 'UK'},
