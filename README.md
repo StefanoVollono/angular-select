@@ -90,3 +90,7 @@ $scope.countriesCallback = function (index) {
   $scope.callbackResult = index;
 };
 ```
+
+## Demo
+
+https://stefanovollono.github.io/angular-select/github-page/
