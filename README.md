@@ -3,10 +3,8 @@
 # angular-select
 Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. [Demo](https://stefanovollono.github.io/angular-select/github-page/)
 
-## Installation with bower or yarn
-`yarn install angular-select-option --save`
-
-`bower install angular-select-option --save`
+## Installation with npm
+`npm install angular-select-option --save`
 
 ## Import scripts in your html and the module as a dependency:
 the project depends on Angular and jQuery
