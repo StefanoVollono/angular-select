@@ -10,9 +10,12 @@ Angular Select is a responsive and customizable select for angular 1.x. A simple
 the project depends on Angular and jQuery
 
 ```html
+<!-- Dependencies -->
 <script src="<your-path>/jquery/dist/jquery.js"></script>
 <script src="<your-path>/angular/angular.js"></script>
-<script src="<your-path>/angular-select/src/angular-select.js"></script>
+
+<!-- Script -->
+<script src="<your-path>/angular-select-option/src/angular-select.js"></script>
  ```
 
  ```javascript
