@@ -10,7 +10,7 @@
     "serve": "http-server"
   },
   "dependencies": {
-    "angular": "1.7.8",
+    "angular": "1.8.0",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
