@@ -10,12 +10,12 @@
     "serve": "http-server"
   },
   "dependencies": {
-    "angular": "1.8.0",
-    "jquery": "^3.4.1"
+    "angular": "1.8.2",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-useref": "^3.1.6",
-    "http-server": "0.11.1"
+    "gulp-useref": "^5.0.0",
+    "http-server": "^0.12.3"
   }
 }
