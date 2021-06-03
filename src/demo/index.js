@@ -1,5 +1,5 @@
 import angular from 'angular';
-import './lib/angular-select'
+import '../lib/angular-select'
 
 angular
   .module("selectExampleApp", ['angular-select'])
