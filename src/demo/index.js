@@ -1,5 +1,7 @@
 import angular from 'angular';
-import '../lib/angular-select'
+import angularSelect from '../lib/angular-select';
+
+import './index.scss';
 
 angular
   .module("selectExampleApp", ['angular-select'])
