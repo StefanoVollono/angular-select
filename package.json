@@ -8,13 +8,13 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js --mode development",
-    "build": "webpack --config webpack.prod.js --mode production",
-    "preview": "npm run build && http-server dist"
+    "build": "webpack --config webpack.prod.js --mode production"
   },
-  "dependencies": {
+  "peerDependencies": {
     "angular": "1.8.2"
   },
   "devDependencies": {
+    "angular": "1.8.2",
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "babel-loader": "^8.2.2",

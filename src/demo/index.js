@@ -1,5 +1,5 @@
 import angular from 'angular';
-import angularSelect from '../lib/angular-select';
+import angularSelect from '../../dist/angular-select.umd';
 
 import './index.scss';
 

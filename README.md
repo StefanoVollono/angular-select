@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/StefanoVollono/angular-select.svg?branch=master)](https://travis-ci.org/StefanoVollono/angular-select)
+[![Build Status](https://travis-ci.com/StefanoVollono/angular-select.svg?branch=master)](https://travis-ci.com/StefanoVollono/angular-select)
 
 # angular-select
 Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. [Demo](https://stefanovollono.github.io/angular-select/github-page/)
@@ -6,16 +6,14 @@ Angular Select is a responsive and customizable select for angular 1.x. A simple
 ## Installation with npm
 `npm install angular-select-option --save`
 
-## Import scripts in your html and the module as a dependency:
-the project depends on Angular and jQuery
+## Import scripts in your html and the directive as a module dependency:
 
 ```html
-<!-- Dependencies -->
-<script src="<your-path>/jquery/dist/jquery.js"></script>
-<script src="<your-path>/angular/angular.js"></script>
+<!-- Dependency -->
+<script src="<your-node-module-path>/angular/angular.js"></script>
 
-<!-- Script -->
-<script src="<your-path>/angular-select-option/src/angular-select.js"></script>
+<!-- Import as Script -->
+<script src="<your-node-module-path>/angular-select-option/src/angular-select.js"></script>
  ```
 
  ```javascript
