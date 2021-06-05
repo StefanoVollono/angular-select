@@ -103,8 +103,8 @@ $scope.countriesCallback = function (index) {
 };
 ```
 
- ## How to run local npm scripts
- ```javascript
+## How to run local npm scripts
+```javascript
  // Run local dev server on demo folder
  npm run serve
 
@@ -116,4 +116,4 @@ $scope.countriesCallback = function (index) {
 
  // Serve build demo inside dist folder
  npm run serve:build-demo
-
+```
