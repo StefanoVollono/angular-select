@@ -15,7 +15,7 @@ Angular Select is a responsive and customizable select for angular 1.x. A simple
 <script src="<your-node-module-path>/dist/angular-select-umd.min.js"></script>
 
 <!-- Or you can choose es6 module. Don't forget type=module -->
-<script type="module" src="<your-node-module-path>/angular-select-option/src/angular-select-esm.min.js"></script>
+<script type="module" src="<your-node-module-path>/angular-select-option/src/lib/angular-select.js"></script>
  ```
 
  ```javascript
@@ -103,4 +103,17 @@ $scope.countriesCallback = function (index) {
 };
 ```
 
+ ## How to run local npm scripts
+ ```javascript
+ // Run local dev server on demo folder
+ npm run serve
+
+ // Start demo build process. Create demo folder inside dist.
+ npm run build:demo
+
+ // Export minified lib in UMD and ESM format inside dist folder.
+ npm run build:lib
+
+ // Serve build demo inside dist folder
+ npm run serve:build-demo
 

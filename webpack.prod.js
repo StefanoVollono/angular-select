@@ -19,7 +19,7 @@ module.exports = {
   // https://webpack.js.org/concepts/output/
   output: {
     filename: "angular-select-umd.min.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/lib"),
     clean: true,
     library: {
       name: "angular-select",
