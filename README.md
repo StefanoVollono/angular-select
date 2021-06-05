@@ -6,17 +6,28 @@ Angular Select is a responsive and customizable select for angular 1.x. A simple
 ## Installation with npm
 `npm install angular-select-option --save`
 
-## Import scripts in your html and the directive as a module dependency:
+## How to use:
+
+### Method 1: import scripts in your html and the directive as a module dependency:
 
 ```html
-<!-- Dependency -->
-<script src="<your-node-module-path>/angular/angular.js"></script>
+<!-- You can choose umd format -->
+<script src="<your-node-module-path>/dist/angular-select-umd.min.js"></script>
 
-<!-- Import as Script -->
-<script src="<your-node-module-path>/angular-select-option/src/angular-select.js"></script>
+<!-- Or you can choose es6 module. Don't forget type=module -->
+<script type="module" src="<your-node-module-path>/angular-select-option/src/angular-select-esm.min.js"></script>
  ```
 
  ```javascript
+angular.module('myApp', ['angular-select']);
+```
+
+### Method 2: import all scripts from node_modules and use it as module dependency (see the demo folder):
+
+ ```javascript
+import angular from 'angular';
+import angularSelect from 'angular-select-option/lib/angular-select'; 
+
 angular.module('myApp', ['angular-select']);
 ```
 
@@ -55,7 +66,7 @@ scope: {
 ```
 
 ## Usage
-A simple example available in /example folder
+A simple example available in /demo folder
 
 ```html
 <form name="formName" novalidate>

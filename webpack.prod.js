@@ -22,7 +22,7 @@ module.exports = {
   // how to write the compiled files to disk
   // https://webpack.js.org/concepts/output/
   output: {
-    filename: "angular-select.umd.js",
+    filename: "angular-select-umd.min.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     library: {
@@ -36,11 +36,11 @@ module.exports = {
       patterns: [
         { 
           from: "src/lib/angular-select.js",
-          to: 'angular-select.esm.js'
+          to: 'angular-select-esm.min.js'
         },
         { 
           from: "src/lib/angular-select.scss",
-          to: "angular-select.css",
+          to: "angular-select.min.css",
           transform (content, path) {
             const result = sass.renderSync({
               file: path
