@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/StefanoVollono/angular-select.svg?branch=master)](https://travis-ci.com/StefanoVollono/angular-select)
 
 # angular-select
-Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. [Demo](https://stefanovollono.github.io/angular-select/github-page/)
+Angular Select is a responsive and customizable select for angular 1.x. A simple directive along with a configuration object and you're ready to go. [Demo](https://stefanovollono.github.io/angular-select/)
 
 ## Installation with npm
 `npm install angular-select-option --save`
