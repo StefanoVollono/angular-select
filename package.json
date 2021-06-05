@@ -1,6 +1,6 @@
 {
   "name": "angular-select-option",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Select directive for angular 1.x",
   "main": "index.js",
   "repository": "https://github.com/StefanoVollono/angular-select.git",
