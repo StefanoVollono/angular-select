@@ -12,10 +12,6 @@ const sass = require('sass');
 module.exports = {
   mode: 'production',
 
-  // This option controls if and how source maps are generated.
-  // https://webpack.js.org/configuration/devtool/
-  // devtool: "source-map",
-
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: './src/lib/angular-select.js',
 
