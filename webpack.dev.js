@@ -17,7 +17,9 @@ module.exports = {
 
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
-    contentBase: path.resolve(__dirname, 'src'),
+    static: {
+      directory: path.resolve(__dirname, 'src'),
+    }
   },
 
   plugins: [
